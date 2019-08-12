@@ -8,13 +8,15 @@ import io.lettuce.core.codec.RedisCodec;
 import io.lettuce.core.codec.StringCodec;
 import io.lettuce.core.output.ArrayOutput;
 import io.lettuce.core.output.IntegerOutput;
-import io.lettuce.core.protocol.*;
+import io.lettuce.core.protocol.AsyncCommand;
+import io.lettuce.core.protocol.Command;
+import io.lettuce.core.protocol.CommandArgs;
+import io.lettuce.core.protocol.RedisCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pkg.lettuce.cmd.EchoCmd;
 import pkg.lettuce.cmd.RandCmd;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -68,5 +70,7 @@ public class LettuceClient {
             String s = (String) o;
             logger.info("{}", s);
         });
+
+        lettuceClient.shutdown();
     }
 }
