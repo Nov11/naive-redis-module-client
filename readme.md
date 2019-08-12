@@ -2,4 +2,4 @@
 * lettcue & redisson 
 
 ##### todo
-* thrift marshalling/unmarshalling
+* flatbuffers marshalling/unmarshalling
