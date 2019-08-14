@@ -1,0 +1,9 @@
+namespace pkg.flatbuffers.rmod;
+
+table Record{
+    target:string;
+    uri:string;
+    ts:long;
+    request:string;
+    response:string;
+}
